@@ -7,3 +7,5 @@ var details = {
 };
 
 module.exports = details;
+
+// allah hu akbar bsdk
