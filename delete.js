@@ -28,6 +28,15 @@ application.get("/fetchinfo", (request, response) => {
     });
 });
 
+
+application.get("/fetchstudent", (request, response) => {
+    mysqlConnection.query("SELECT * FROM Student where roll > 20", (err, rows, fields) => {
+        if (!err) response.send(rows);
+        else console.log(err);
+    });
+});
+
+
 application.delete("/delete", (request, response) => {
     var id = request.body.id;
     var message = {
