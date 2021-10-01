@@ -36,6 +36,13 @@ application.get("/fetchstudent", (request, response) => {
     });
 });
 
+application.get("/fetchAllStudent", (request, response) => {
+    mysqlConnection.query("SELECT * FROM Student", (err, rows, fields) => {
+        if (!err) response.send(rows);
+        else console.log(err);
+    });
+});
+
 
 application.delete("/delete", (request, response) => {
     var id = request.body.id;
